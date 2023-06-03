@@ -3,22 +3,17 @@
     <ul class="nav-ul">
       <li class="nav-li" v-for="(item, index) in navData" :key="index">
         <Poptip placement="right" trigger="hover" :transfer="true">
-          <div class="top">
+          <div class="flex-center">
             <p style="float: left;margin-right: 5px;">
               <img class="icon" v-lazy="item.icon" alt="" />
             </p>
-            <span>{{ item.name }}</span>
-            <span v-if="item.num > 0" class="used"
-              ><Icon type="ios-link" />次数：{{ item.num }}</span
-            >
-          </div>
-          <div class="desc">
-            <Tag type="border" color="green" v-show="item.title">{{
-              item.title
-            }}</Tag>
-            <p>
-              <span>{{ item.desc }}</span>
-            </p>
+            <div class="ml10">
+              <div>{{ item.name }}</div>
+              <!-- <div v-if="item.num"><Icon type="ios-link" />次数：{{ item.num }}</div> -->
+              <p class="desc">
+                <span>{{ item.desc }}</span>
+              </p>
+            </div>
           </div>
           <div class="mu" slot="content">
             <ButtonGroup vertical>
@@ -216,6 +211,7 @@ span {
 
 .top {
   height: 36px;
+  width: 200px;
 }
 .icon {
   width: 35px;
@@ -233,10 +229,11 @@ span {
 .nav-li {
   position: relative;
   margin: 0 15px 15px 0;
-  width: 180px;
+  width: 250px;
   padding: 15px;
   border: 1px solid #eee;
   cursor: pointer;
+  background-color: #fff;
   border-radius: 5px;
   overflow: hidden;
   transform-origin: right bottom;
@@ -244,6 +241,7 @@ span {
   -ms-transform-origin: right bottom;
   transition: 0.1s linear;
   -webkit-transition: 0.1s linear;
+  box-shadow: 0px 0px 20px -5px rgba(158,158,158,.2);
   -ms-transition: 0.1s linear;
   @media screen {
     @media (max-width: @min-width) {

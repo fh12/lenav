@@ -4,9 +4,9 @@
         <Layout>
             <Sider breakpoint="md" collapsible :collapsed-width="78" v-model="isCollapsed" :style="{position: 'fixed', height: '100vh', left: 0}">
             <div class="logo-con">
-                <a href="./"><img src="logo.png" key="max-logo" /></a>
+                <a href="./"><img src="logo-white.png" key="max-logo" /></a>
             </div>
-                <Menu active-name="1-2" theme="dark" width="auto" :class="menuitemClasses" @on-select="jumpAnchor">
+                <Menu active-name="1-2" width="auto" :class="menuitemClasses" @on-select="jumpAnchor">
                     <MenuItem name="我的收藏">
                         <Icon type="ios-heart" />
                         <span>我的收藏</span>
@@ -31,11 +31,11 @@
                 <div slot="trigger"></div>
             </Sider>
             <Layout class="layout-right">
-            <Header class="layout-header-bar" :style="{position: 'fixed', width: '100%', zIndex: 99}">欢迎使用
-                <Input v-model="search" placeholder="请输入内容搜搜..." class="search" @on-enter="searchData"/>
-                <span class="search-text"><Button type="primary" icon="search" @click="searchData">搜索</Button></span>
-                <Button type="success" icon="plus-round" @click="resetSearch" v-show="searchStatus" >重置</Button>
-            </Header>
+                <Header class="layout-header-bar" :style="{position: 'fixed', width: '100%', zIndex: 99}">欢迎使用
+                    <Input v-model="search" placeholder="请输入内容搜搜..." class="search" @on-enter="searchData"/>
+                    <span class="search-text"><Button type="primary" icon="search" @click="searchData">搜索</Button></span>
+                    <Button type="success" icon="plus-round" @click="resetSearch" v-show="searchStatus" >重置</Button>
+                </Header>
                 <Content :style="{margin: '88px 20px 0', background: '#fff', minHeight: '500px'}">
                     <NavSub :data="data" :spinShow="spinShow"></NavSub>
                 </Content>
@@ -47,7 +47,7 @@
 </template>
 <script>
 import NavSub from '@/components/card/sub'
-// import Data from '@/data/data'
+import Data from '@/assets/data.json'
 export default {
     data () {
         return {
@@ -70,31 +70,16 @@ export default {
         }
     },
     created: function() {
-        window.console.group('------Create创建前状态------');
         this._getData()
     },
     methods: {
         _getData() {
-            this.spinShow = true;
-            this.$axios
-              .get("/data/nav.json") // 获取nav数据
-              .then(rep => {
-                  this.data = rep.data;
-                  for (let key in this.data) {
-                    if (this.data[key].hasOwnProperty("children")) {
-                      this.childrenList = this.childrenList.concat(this.data[key].children);
-                    }
-                  }
-                  this.spinShow = false;
-              })
-              .catch(e => {
-                  this.$Message.error({
-                      content: "获取数据失败!",
-                      duration: 120,
-                      closable: true
-                  });
-                  window.console.log("错误信息：",e);
-              });
+            this.data = Data;
+            for (let key in this.data) {
+                if (this.data[key].hasOwnProperty("children")) {
+                    this.childrenList = this.childrenList.concat(this.data[key].children);
+                }
+            }
         },
         jumpAnchor (name) {
           if (document.documentElement.clientWidth <= 768 ){
@@ -195,9 +180,13 @@ export default {
 }
 .ivu-layout-sider {
     z-index: 100;
+    background: #fff!important;
+}
+.logo-con {
+    text-align: center;
 }
 .logo-con img {
-    width: 180px;
+    width: 140px;
     margin: 10px;
 }
 .search {

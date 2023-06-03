@@ -1,0 +1,98 @@
+{
+    "hot": {
+      "title": "热门工具",
+      "name": "test",
+      "icon": "ios-contacts-outline",
+        "nav": [
+            {
+                "icon": "./static/images/chatgpt-icon.png",
+                "name": "ChatGPT",
+                "desc": "OpenAi旗下通用语言大模型",
+                "link": "https://chat.openai.com/auth/login",
+                "doc": ""
+            },
+            {
+                "icon": "./static/images/midjourney-icon.png",
+                "name": "Midjourney",
+                "desc": "Ai图像和插画生成工具",
+                "link": "https://www.midjourney.com/app/",
+                "doc": ""
+            }
+        ]
+    },
+    "write": {
+        "title": "AI图像工具",
+        "name": "write",
+        "icon": "ios-contacts-outline",
+        "children": ["test1", "test2","test3"],
+        "nav": [
+            {
+                "icon": "./static/images/jenkins.png",
+                "name": "jenkins",
+                "desc": "测试环境Jenkins",
+                "link": "http://127.0.0.1:8080/",
+                "doc": "/data/docs/jenkins.md"
+            }
+        ]
+    },
+    "test1": {
+        "title": "Test1环境地址",
+        "name": "test1",
+        "nav": [
+            {
+                "icon": "./static/images/confluence.png",
+                "name": "test1",
+                "desc": "Test1环境详细信息",
+                "link": "http://127.0.0.1:8090/pages/viewpage.action?pageId=6127905"
+            }
+        ]
+    },
+    "test2": {
+        "title": "Test2环境地址",
+        "name": "test2",
+        "nav": [
+            {
+                "icon": "./static/images/confluence.png",
+                "name": "test2",
+                "desc": "Test2环境详细信息",
+                "link": "http://127.0.0.1:8090/pages/viewpage.action?pageId=6127905"
+            }
+        ]
+    },
+    "test3": {
+        "title": "Test3环境地址",
+        "name": "test3",
+        "nav": [
+            {
+                "icon": "./static/images/confluence.png",
+                "name": "test3",
+                "desc": "Test3环境详细信息",
+                "link": "http://127.0.0.1:8090/pages/viewpage.action?pageId=6127905"
+            }
+        ]
+    },
+    "pre": {
+        "title": "Pre环境地址",
+        "name": "pre",
+        "nav": [
+            {
+                "icon": "./static/images/confluence.png",
+                "name": "pre",
+                "desc": "Pre环境详细信息",
+                "link": "http://127.0.0.1:8090/pages/viewpage.action?pageId=6127905"
+            }
+        ]
+    },
+    "prod": {
+        "title": "Prod环境地址",
+        "name": "prod",
+        "nav": [
+            {
+                "icon": "./static/images/confluence.png",
+                "name": "prod",
+                "desc": "Prod环境详细信息",
+                "link": "http://127.0.0.1:8090/pages/viewpage.action?pageId=6127905"
+            }
+        ]
+    }
+  }

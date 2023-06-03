@@ -5,6 +5,7 @@ import store from './store'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 import VueLazyload from 'vue-lazyload'
+import '@/assets/style.css'
 import axios from "axios";
 
 Vue.use(iView)

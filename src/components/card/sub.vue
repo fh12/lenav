@@ -78,6 +78,7 @@ export default {
     top: 2px;
 }
 .nodeCard {
-    margin: 20px 20px 0 20px
+    margin: 20px 20px 0 20px;
+    background-color: #f5fbfb;
 }
 </style>
